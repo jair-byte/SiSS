@@ -16,8 +16,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                {{--}}
-                @foreach ($areas as $area)
+
+                @foreach ($area as $area)
                         <tr>
                             <td>{{$area->id}}</td>
                             <td>{{$area->nombre_area}}</td>
@@ -30,5 +30,5 @@
 
         </div>
     </main>
-    {{--}}
+
 @endsection

@@ -12,8 +12,8 @@ class AreaController extends Controller
      */
     public function index()
     {
-        //$area=Area::all();
-        //return view('area.index',['area' => $area]);
+        $area=Area::all();
+        return view('area.index',['area' => $area]);
         return view('area.index');
     }
 
