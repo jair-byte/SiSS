@@ -24,10 +24,11 @@
                             <td><a href="{{url('area/'.$area->id.'/edit')}}" class="btn btn-success btn-sm">Editar</a></td>
                         </tr>
                     @endforeach
-                    {{--}}
+
                 </tbody>
             </table>
 
         </div>
     </main>
+    {{--}}
 @endsection
