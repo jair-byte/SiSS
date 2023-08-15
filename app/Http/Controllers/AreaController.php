@@ -14,7 +14,6 @@ class AreaController extends Controller
     {
         $area=Area::all();
         return view('area.index',['area' => $area]);
-        return view('area.index');
     }
 
     /**
@@ -31,7 +30,7 @@ class AreaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre_area' => 'required|unique:areas'
+            'nombre_area' => 'required|unique:area'
         ]);
 
         $area = new Area();
@@ -64,15 +63,17 @@ class AreaController extends Controller
     public function update(Request $request, $idarea)
     {
         $request->validate([
-            'nombre_area' => 'required|unique:areas'
+            'nombre_area' => 'required|unique:area'
         ]);
-
         $area = Area::find($idarea);
-        $area->nombre_area = $request->input('nombre_area');
-        $area->save();
-
-        return view("area.message",['msg' => "Registro guardado"]);
+            if (!$idarea) {
+            return view("area.message", ['msg' => "Área no encontrada"]);
+        }
+    $area->nombre_area = $request->input('nombre_area');
+    $area->save();
+    return view("area.message", ['msg' => "Registro guardado"]);
     }
+
 
     /**
      * Remove the specified resource from storage.

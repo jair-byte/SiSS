@@ -19,9 +19,9 @@
 
                 @foreach ($area as $area)
                         <tr>
-                            <td>{{$area->id}}</td>
+                            <td>{{$area->idarea}}</td>
                             <td>{{$area->nombre_area}}</td>
-                            <td><a href="{{url('area/'.$area->id.'/edit')}}" class="btn btn-success btn-sm">Editar</a></td>
+                            <td><a href="{{url('area/'.$area->idarea.'/edit')}}" class="btn btn-success btn-sm">Editar</a></td>
                         </tr>
                     @endforeach
 
