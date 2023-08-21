@@ -7,15 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Persona extends Model
 {
-    public $timestamps = false;
     protected $table = 'persona';
     protected $primaryKey = 'idpersona';
+    public $timestamps = false;
 
-    protected $fillable = ['titulo', 'nombre', 'ape_pat', 'ape_mat']; // Campos que se pueden asignar masivamente
-
-    // Relación con el modelo Coordinador
-    public function coordinador()
+    // Relación uno a uno con la tabla Alumno
+    public function alumno()
     {
-        return $this->hasOne(Coordinador::class, 'id_persona', 'id');
+        return $this->hasOne(Alumno::class, 'persona_id', 'idpersona');
     }
 }
