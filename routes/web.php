@@ -22,6 +22,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/menu', [MenuController::class, 'index'])->name('menu.index');
+Route::get('/alumnos', [AlumnoController::class, 'index'])->name('alumnos.index');
+Route::resource('/vista', AlumnoController::class);
 
 Route::resource('/area', AreaController::class);
 
@@ -30,3 +33,5 @@ Route::resource('/coordinador', CoordinadorController::class);
 Route::resource('/proyectos_ofertados', Proyectos_ofertadosController::class);
 
 Route::resource('/menu', MenuController::class);
+
+
